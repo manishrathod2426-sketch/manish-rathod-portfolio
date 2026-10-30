@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-orbitron: "Orbitron", monospace, sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-cyber-black: #070707;
+  --color-cyber-dark: #111111;
+  --color-cyber-card: #0d0d0f;
+  --color-cyber-border: rgba(255, 38, 56, 0.2);
+  --color-neon-red: #ff2638;
+  --color-glow-red: #ff003c;
+  --color-soft-white: #f5f5f5;
+  --color-muted-gray: #999999;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-space), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #070707;
+  color: #f5f5f5;
+}
+
+/* Cybernetic Grid & Glowing Backgrounds */
+.bg-cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 38, 56, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 38, 56, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-cyber-dots {
+  background-image: radial-gradient(rgba(255, 38, 56, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glow filters and text shadows */
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 38, 56, 0.7), 0 0 25px rgba(255, 0, 60, 0.4);
+}
+
+.text-glow-white {
+  text-shadow: 0 0 10px rgba(245, 245, 245, 0.5);
+}
+
+.box-glow-red {
+  box-shadow: 0 0 25px -5px rgba(255, 38, 56, 0.35), inset 0 0 15px rgba(255, 0, 60, 0.1);
+}
+
+.box-glow-red-lg {
+  box-shadow: 0 0 40px -5px rgba(255, 38, 56, 0.5), inset 0 0 20px rgba(255, 0, 60, 0.15);
+}
+
+.border-glow-red {
+  border-color: rgba(255, 38, 56, 0.5);
+  box-shadow: 0 0 15px rgba(255, 38, 56, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070707;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 38, 56, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2638;
+  box-shadow: 0 0 10px #ff2638;
+}
+
+/* Scanline visual effect */
+.scanline-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Angle clip path utility for sci-fi panels */
+.clip-sci-fi {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+.clip-sci-fi-sm {
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
